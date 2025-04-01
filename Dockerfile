@@ -32,6 +32,7 @@ RUN \
 
 COPY entrypoint.sh /entrypoint.sh
 USER postgres
+RUN mkdir .ssh
 EXPOSE 5432
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["/usr/bin/pgbouncer", "/etc/pgbouncer/pgbouncer.ini"]
